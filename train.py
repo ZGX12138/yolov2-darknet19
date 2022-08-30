@@ -46,7 +46,7 @@ def parse_args():
                         help='The upper bound of warm-up')
     parser.add_argument('--multi_scale_range', nargs='+', default=[10, 20], type=int,
                         help='lr epoch to decay')
-    parser.add_argument('--max_epoch', type=int, default=1,
+    parser.add_argument('--max_epoch', type=int, default=200,
                         help='The upper bound of warm-up')
     parser.add_argument('--lr_epoch', nargs='+', default=[100, 150], type=int,
                         help='lr epoch to decay')
@@ -187,12 +187,12 @@ def train():
         model = torch.nn.SyncBatchNorm.convert_sync_batchnorm(model)
 
     model = model.to(device).train()
-    checkpoint = torch.load('../input/yolov2pth/yolov2_36.4_56.6.pth', map_location='cpu')
-    del_keys = ["neck.projector.0.convs.0.weight", "cls_pred.weight",
-                "cls_pred.bias", ]
-    for k in del_keys:
-        del checkpoint[k]
-    print(model.load_state_dict(checkpoint, strict=False))
+    # checkpoint = torch.load('../input/yolov2pth/yolov2_36.4_56.6.pth', map_location='cpu')
+    # del_keys = ["neck.projector.0.convs.0.weight", "cls_pred.weight",
+    #             "cls_pred.bias", ]
+    # for k in del_keys:
+    #     del checkpoint[k]
+    # print(model.load_state_dict(checkpoint, strict=False))
 
     # compute FLOPs and Params
     if local_rank == 0:
