@@ -10,6 +10,7 @@ __pycache__
 flower_data
 *.h5
 *.pth
+*.weights
 *.pt
 *.jpg
 *.ckpt.*

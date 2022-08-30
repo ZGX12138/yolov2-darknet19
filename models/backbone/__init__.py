@@ -1,5 +1,5 @@
 from .resnet import resnet18, resnet50, resnet101
-from .darknet import darknet53
+from .darknet import darknet53,darknet19
 from .cspdarknet_tiny import cspdarknet_tiny
 from .cspdarknet53 import cspdarknet53
 from .yolox_backbone import yolox_cspdarknet_s, yolox_cspdarknet_m, yolox_cspdarknet_l, \
@@ -27,6 +27,11 @@ def build_backbone(model_name='r18', pretrained=False, freeze=None, img_size=224
     elif model_name == 'd53':
         print('Backbone: DarkNet-53 ...')
         model = darknet53(pretrained=pretrained)
+        feature_channels = [256, 512, 1024]
+        strides = [8, 16, 32]
+    elif model_name == 'd19':
+        print('Backbone: DarkNet-19 ...')
+        model = darknet19(pretrained=pretrained)
         feature_channels = [256, 512, 1024]
         strides = [8, 16, 32]
     elif model_name == 'cspd53':

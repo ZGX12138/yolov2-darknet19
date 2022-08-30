@@ -1,0 +1,166 @@
+D:\LearnAPP\anaconda3\envs\mytorch\python.exe D:/mycode/github_repo/yolo-v2/PyTorch_YOLO-Family/train.py
+Setting Arguments.. :  Namespace(cuda=True, batch_size=16, lr=0.001, img_size=416, multi_scale_range=[10, 20], max_epoch=1, lr_epoch=[100, 150], wp_epoch=2, start_epoch=0, resume=None, num_workers=8, num_gpu=1, eval_epoch=10, tfboard=False, save_folder='weights/', vis_data=False, vis_targets=False, optimizer='sgd', lr_schedule='step', grad_clip=None, model='yolov2', conf_thresh=0.001, nms_thresh=0.6, root='.\\data', dataset='voc', loss_obj_weight=1.0, loss_cls_weight=1.0, loss_reg_weight=1.0, scale_loss='batch', no_warmup=False, multi_scale=False, ema=False, mosaic=False, mixup=False, multi_anchor=False, center_sample=False, accumulate=1, distributed=False, local_rank=0, sybn=False)
+----------------------------------------------------------
+use cuda
+Training model on: voc
+The dataset size: 16551
+----------------------------------------------------------
+Build YOLOv2 ...
+Backbone: DarkNet-19 ...
+Initializing the darknet19 network ......
+Loading the pretrained model ...
+The pretrained weight can not be found ...
+D:\LearnAPP\anaconda3\envs\mytorch\lib\site-packages\torch\functional.py:568: UserWarning: torch.meshgrid: in an upcoming release, it will be required to pass the indexing argument. (Triggered internally at  C:\cb\pytorch_1000000000000\work\aten\src\ATen\native\TensorShape.cpp:2228.)
+  return _VF.meshgrid(tensors, **kwargs)  # type: ignore[attr-defined]
+Neck: Dilated Encoder
+[INFO] Register count_convNd() for <class 'torch.nn.modules.conv.Conv2d'>.
+[INFO] Register count_normalization() for <class 'torch.nn.modules.batchnorm.BatchNorm2d'>.
+[INFO] Register count_relu() for <class 'torch.nn.modules.activation.LeakyReLU'>.
+[INFO] Register zero_ops() for <class 'torch.nn.modules.container.Sequential'>.
+[INFO] Register zero_ops() for <class 'torch.nn.modules.pooling.MaxPool2d'>.
+FLOPs :  12.995899904  B
+Params :  40.403617  M
+use SGD with momentum ...
+[Epoch 1/1][Iter 0/1034][lr 0.000000][Loss: obj 51.38 || cls 5.30 || reg 1.31 || size 416 || time: 11.85]
+[Epoch 1/1][Iter 10/1034][lr 0.000000][Loss: obj 50.55 || cls 5.28 || reg 1.67 || size 416 || time: 1.88]
+[Epoch 1/1][Iter 20/1034][lr 0.000000][Loss: obj 50.32 || cls 5.18 || reg 1.31 || size 416 || time: 1.88]
+[Epoch 1/1][Iter 30/1034][lr 0.000000][Loss: obj 50.91 || cls 5.50 || reg 1.78 || size 416 || time: 1.86]
+[Epoch 1/1][Iter 40/1034][lr 0.000000][Loss: obj 51.96 || cls 6.73 || reg 1.76 || size 416 || time: 1.88]
+[Epoch 1/1][Iter 50/1034][lr 0.000000][Loss: obj 49.99 || cls 5.09 || reg 1.50 || size 416 || time: 1.90]
+[Epoch 1/1][Iter 60/1034][lr 0.000000][Loss: obj 52.60 || cls 7.03 || reg 1.80 || size 416 || time: 1.98]
+[Epoch 1/1][Iter 70/1034][lr 0.000000][Loss: obj 53.08 || cls 7.59 || reg 1.95 || size 416 || time: 2.03]
+[Epoch 1/1][Iter 80/1034][lr 0.000000][Loss: obj 51.18 || cls 6.22 || reg 1.95 || size 416 || time: 1.97]
+[Epoch 1/1][Iter 90/1034][lr 0.000000][Loss: obj 51.22 || cls 6.03 || reg 1.95 || size 416 || time: 1.89]
+[Epoch 1/1][Iter 100/1034][lr 0.000000][Loss: obj 50.21 || cls 4.98 || reg 1.27 || size 416 || time: 1.88]
+[Epoch 1/1][Iter 110/1034][lr 0.000000][Loss: obj 51.80 || cls 5.47 || reg 1.21 || size 416 || time: 1.90]
+[Epoch 1/1][Iter 120/1034][lr 0.000000][Loss: obj 50.83 || cls 4.47 || reg 1.20 || size 416 || time: 1.88]
+[Epoch 1/1][Iter 130/1034][lr 0.000000][Loss: obj 50.46 || cls 4.64 || reg 0.95 || size 416 || time: 1.88]
+[Epoch 1/1][Iter 140/1034][lr 0.000000][Loss: obj 50.44 || cls 4.66 || reg 0.97 || size 416 || time: 1.92]
+[Epoch 1/1][Iter 150/1034][lr 0.000000][Loss: obj 50.24 || cls 4.45 || reg 1.05 || size 416 || time: 1.94]
+[Epoch 1/1][Iter 160/1034][lr 0.000000][Loss: obj 52.37 || cls 6.29 || reg 1.83 || size 416 || time: 1.92]
+[Epoch 1/1][Iter 170/1034][lr 0.000000][Loss: obj 51.02 || cls 6.10 || reg 1.53 || size 416 || time: 1.88]
+[Epoch 1/1][Iter 180/1034][lr 0.000000][Loss: obj 51.96 || cls 7.33 || reg 2.15 || size 416 || time: 1.90]
+[Epoch 1/1][Iter 190/1034][lr 0.000000][Loss: obj 50.36 || cls 5.02 || reg 1.32 || size 416 || time: 1.88]
+[Epoch 1/1][Iter 200/1034][lr 0.000000][Loss: obj 50.61 || cls 5.06 || reg 1.04 || size 416 || time: 1.88]
+[Epoch 1/1][Iter 210/1034][lr 0.000000][Loss: obj 51.13 || cls 5.90 || reg 1.53 || size 416 || time: 1.90]
+[Epoch 1/1][Iter 220/1034][lr 0.000000][Loss: obj 50.64 || cls 5.29 || reg 1.18 || size 416 || time: 1.90]
+[Epoch 1/1][Iter 230/1034][lr 0.000000][Loss: obj 50.26 || cls 5.57 || reg 1.54 || size 416 || time: 1.88]
+[Epoch 1/1][Iter 240/1034][lr 0.000000][Loss: obj 49.09 || cls 4.33 || reg 0.96 || size 416 || time: 1.90]
+[Epoch 1/1][Iter 250/1034][lr 0.000000][Loss: obj 50.42 || cls 4.92 || reg 1.06 || size 416 || time: 1.89]
+[Epoch 1/1][Iter 260/1034][lr 0.000000][Loss: obj 50.62 || cls 5.31 || reg 1.20 || size 416 || time: 1.90]
+[Epoch 1/1][Iter 270/1034][lr 0.000000][Loss: obj 50.05 || cls 4.56 || reg 1.43 || size 416 || time: 1.90]
+[Epoch 1/1][Iter 280/1034][lr 0.000000][Loss: obj 50.25 || cls 5.12 || reg 1.49 || size 416 || time: 1.90]
+[Epoch 1/1][Iter 290/1034][lr 0.000000][Loss: obj 50.70 || cls 7.13 || reg 1.99 || size 416 || time: 1.90]
+[Epoch 1/1][Iter 300/1034][lr 0.000000][Loss: obj 49.09 || cls 4.30 || reg 0.78 || size 416 || time: 1.90]
+[Epoch 1/1][Iter 310/1034][lr 0.000001][Loss: obj 48.99 || cls 5.77 || reg 1.61 || size 416 || time: 1.91]
+[Epoch 1/1][Iter 320/1034][lr 0.000001][Loss: obj 48.60 || cls 4.28 || reg 0.76 || size 416 || time: 1.91]
+[Epoch 1/1][Iter 330/1034][lr 0.000001][Loss: obj 50.15 || cls 5.48 || reg 1.07 || size 416 || time: 1.91]
+[Epoch 1/1][Iter 340/1034][lr 0.000001][Loss: obj 49.22 || cls 5.41 || reg 1.55 || size 416 || time: 1.91]
+[Epoch 1/1][Iter 350/1034][lr 0.000001][Loss: obj 49.78 || cls 6.25 || reg 2.04 || size 416 || time: 1.90]
+[Epoch 1/1][Iter 360/1034][lr 0.000001][Loss: obj 50.97 || cls 8.53 || reg 2.90 || size 416 || time: 1.90]
+[Epoch 1/1][Iter 370/1034][lr 0.000001][Loss: obj 49.64 || cls 6.67 || reg 1.69 || size 416 || time: 1.91]
+[Epoch 1/1][Iter 380/1034][lr 0.000001][Loss: obj 48.45 || cls 4.65 || reg 1.07 || size 416 || time: 1.91]
+[Epoch 1/1][Iter 390/1034][lr 0.000001][Loss: obj 48.99 || cls 5.72 || reg 1.57 || size 416 || time: 1.91]
+[Epoch 1/1][Iter 400/1034][lr 0.000001][Loss: obj 47.98 || cls 4.78 || reg 1.03 || size 416 || time: 1.91]
+[Epoch 1/1][Iter 410/1034][lr 0.000002][Loss: obj 47.26 || cls 5.14 || reg 1.68 || size 416 || time: 1.91]
+[Epoch 1/1][Iter 420/1034][lr 0.000002][Loss: obj 47.26 || cls 4.31 || reg 1.18 || size 416 || time: 1.96]
+[Epoch 1/1][Iter 430/1034][lr 0.000002][Loss: obj 46.87 || cls 5.23 || reg 1.77 || size 416 || time: 1.96]
+[Epoch 1/1][Iter 440/1034][lr 0.000002][Loss: obj 47.49 || cls 5.55 || reg 1.36 || size 416 || time: 1.97]
+[Epoch 1/1][Iter 450/1034][lr 0.000002][Loss: obj 47.60 || cls 6.57 || reg 1.79 || size 416 || time: 1.94]
+[Epoch 1/1][Iter 460/1034][lr 0.000002][Loss: obj 47.61 || cls 6.66 || reg 1.98 || size 416 || time: 1.96]
+[Epoch 1/1][Iter 470/1034][lr 0.000003][Loss: obj 46.40 || cls 6.04 || reg 1.35 || size 416 || time: 1.96]
+[Epoch 1/1][Iter 480/1034][lr 0.000003][Loss: obj 46.09 || cls 6.04 || reg 1.53 || size 416 || time: 1.99]
+[Epoch 1/1][Iter 490/1034][lr 0.000003][Loss: obj 46.25 || cls 6.21 || reg 1.59 || size 416 || time: 1.93]
+[Epoch 1/1][Iter 500/1034][lr 0.000003][Loss: obj 43.99 || cls 4.85 || reg 1.16 || size 416 || time: 1.91]
+[Epoch 1/1][Iter 510/1034][lr 0.000004][Loss: obj 45.99 || cls 7.00 || reg 2.02 || size 416 || time: 1.91]
+[Epoch 1/1][Iter 520/1034][lr 0.000004][Loss: obj 43.23 || cls 5.04 || reg 1.48 || size 416 || time: 1.93]
+[Epoch 1/1][Iter 530/1034][lr 0.000004][Loss: obj 44.44 || cls 5.40 || reg 1.23 || size 416 || time: 1.91]
+[Epoch 1/1][Iter 540/1034][lr 0.000005][Loss: obj 42.97 || cls 4.63 || reg 1.15 || size 416 || time: 1.91]
+[Epoch 1/1][Iter 550/1034][lr 0.000005][Loss: obj 42.61 || cls 4.65 || reg 1.20 || size 416 || time: 1.99]
+[Epoch 1/1][Iter 560/1034][lr 0.000005][Loss: obj 41.21 || cls 4.53 || reg 1.08 || size 416 || time: 1.96]
+[Epoch 1/1][Iter 570/1034][lr 0.000006][Loss: obj 41.34 || cls 4.31 || reg 0.89 || size 416 || time: 1.92]
+[Epoch 1/1][Iter 580/1034][lr 0.000006][Loss: obj 42.37 || cls 8.79 || reg 3.30 || size 416 || time: 1.96]
+[Epoch 1/1][Iter 590/1034][lr 0.000007][Loss: obj 40.49 || cls 6.36 || reg 1.68 || size 416 || time: 1.98]
+[Epoch 1/1][Iter 600/1034][lr 0.000007][Loss: obj 38.63 || cls 4.99 || reg 1.36 || size 416 || time: 1.93]
+[Epoch 1/1][Iter 610/1034][lr 0.000008][Loss: obj 40.00 || cls 7.47 || reg 2.28 || size 416 || time: 1.96]
+[Epoch 1/1][Iter 620/1034][lr 0.000008][Loss: obj 36.22 || cls 5.78 || reg 1.54 || size 416 || time: 1.96]
+[Epoch 1/1][Iter 630/1034][lr 0.000009][Loss: obj 34.76 || cls 5.96 || reg 1.49 || size 416 || time: 1.93]
+[Epoch 1/1][Iter 640/1034][lr 0.000009][Loss: obj 33.31 || cls 6.72 || reg 2.03 || size 416 || time: 1.93]
+[Epoch 1/1][Iter 650/1034][lr 0.000010][Loss: obj 29.44 || cls 5.80 || reg 1.80 || size 416 || time: 1.93]
+[Epoch 1/1][Iter 660/1034][lr 0.000010][Loss: obj 28.85 || cls 6.84 || reg 2.27 || size 416 || time: 1.91]
+[Epoch 1/1][Iter 670/1034][lr 0.000011][Loss: obj 26.15 || cls 6.06 || reg 1.56 || size 416 || time: 1.93]
+[Epoch 1/1][Iter 680/1034][lr 0.000012][Loss: obj 22.31 || cls 4.94 || reg 1.24 || size 416 || time: 1.93]
+[Epoch 1/1][Iter 690/1034][lr 0.000012][Loss: obj 20.17 || cls 6.90 || reg 2.32 || size 416 || time: 1.99]
+[Epoch 1/1][Iter 700/1034][lr 0.000013][Loss: obj 19.07 || cls 6.62 || reg 1.74 || size 416 || time: 1.99]
+[Epoch 1/1][Iter 710/1034][lr 0.000014][Loss: obj 17.13 || cls 6.82 || reg 2.27 || size 416 || time: 2.02]
+[Epoch 1/1][Iter 720/1034][lr 0.000015][Loss: obj 15.52 || cls 4.98 || reg 1.20 || size 416 || time: 1.94]
+[Epoch 1/1][Iter 730/1034][lr 0.000016][Loss: obj 14.00 || cls 4.18 || reg 1.13 || size 416 || time: 1.96]
+[Epoch 1/1][Iter 740/1034][lr 0.000016][Loss: obj 14.24 || cls 4.74 || reg 1.08 || size 416 || time: 1.99]
+[Epoch 1/1][Iter 750/1034][lr 0.000017][Loss: obj 16.64 || cls 9.25 || reg 3.08 || size 416 || time: 1.99]
+[Epoch 1/1][Iter 760/1034][lr 0.000018][Loss: obj 12.55 || cls 4.33 || reg 0.77 || size 416 || time: 1.98]
+[Epoch 1/1][Iter 770/1034][lr 0.000019][Loss: obj 13.10 || cls 5.60 || reg 2.02 || size 416 || time: 1.94]
+[Epoch 1/1][Iter 780/1034][lr 0.000020][Loss: obj 13.27 || cls 4.93 || reg 0.91 || size 416 || time: 1.94]
+[Epoch 1/1][Iter 790/1034][lr 0.000021][Loss: obj 12.07 || cls 4.57 || reg 1.09 || size 416 || time: 2.02]
+[Epoch 1/1][Iter 800/1034][lr 0.000022][Loss: obj 13.08 || cls 5.32 || reg 1.38 || size 416 || time: 1.98]
+[Epoch 1/1][Iter 810/1034][lr 0.000024][Loss: obj 11.84 || cls 4.79 || reg 1.18 || size 416 || time: 1.98]
+[Epoch 1/1][Iter 820/1034][lr 0.000025][Loss: obj 11.30 || cls 4.04 || reg 0.97 || size 416 || time: 1.98]
+[Epoch 1/1][Iter 830/1034][lr 0.000026][Loss: obj 13.04 || cls 5.27 || reg 1.91 || size 416 || time: 2.02]
+[Epoch 1/1][Iter 840/1034][lr 0.000027][Loss: obj 12.45 || cls 5.08 || reg 1.60 || size 416 || time: 2.02]
+[Epoch 1/1][Iter 850/1034][lr 0.000029][Loss: obj 12.57 || cls 6.58 || reg 1.83 || size 416 || time: 2.00]
+[Epoch 1/1][Iter 860/1034][lr 0.000030][Loss: obj 12.93 || cls 7.10 || reg 2.51 || size 416 || time: 2.01]
+[Epoch 1/1][Iter 870/1034][lr 0.000031][Loss: obj 11.10 || cls 4.98 || reg 1.11 || size 416 || time: 2.02]
+[Epoch 1/1][Iter 880/1034][lr 0.000033][Loss: obj 10.75 || cls 4.10 || reg 1.31 || size 416 || time: 2.06]
+[Epoch 1/1][Iter 890/1034][lr 0.000034][Loss: obj 11.12 || cls 4.71 || reg 1.41 || size 416 || time: 2.05]
+[Epoch 1/1][Iter 900/1034][lr 0.000036][Loss: obj 9.97 || cls 3.89 || reg 0.82 || size 416 || time: 2.09]
+[Epoch 1/1][Iter 910/1034][lr 0.000037][Loss: obj 11.79 || cls 6.30 || reg 1.90 || size 416 || time: 2.06]
+[Epoch 1/1][Iter 920/1034][lr 0.000039][Loss: obj 10.43 || cls 4.81 || reg 1.38 || size 416 || time: 2.11]
+[Epoch 1/1][Iter 930/1034][lr 0.000041][Loss: obj 10.81 || cls 5.46 || reg 1.56 || size 416 || time: 2.01]
+[Epoch 1/1][Iter 940/1034][lr 0.000043][Loss: obj 8.99 || cls 3.86 || reg 0.91 || size 416 || time: 2.02]
+[Epoch 1/1][Iter 950/1034][lr 0.000045][Loss: obj 8.59 || cls 4.52 || reg 1.37 || size 416 || time: 2.02]
+[Epoch 1/1][Iter 960/1034][lr 0.000046][Loss: obj 8.50 || cls 3.88 || reg 1.15 || size 416 || time: 1.99]
+[Epoch 1/1][Iter 970/1034][lr 0.000048][Loss: obj 11.89 || cls 7.76 || reg 2.40 || size 416 || time: 2.06]
+[Epoch 1/1][Iter 980/1034][lr 0.000050][Loss: obj 8.78 || cls 4.41 || reg 1.74 || size 416 || time: 2.02]
+[Epoch 1/1][Iter 990/1034][lr 0.000053][Loss: obj 7.77 || cls 4.30 || reg 0.88 || size 416 || time: 2.08]
+[Epoch 1/1][Iter 1000/1034][lr 0.000055][Loss: obj 9.87 || cls 5.59 || reg 1.95 || size 416 || time: 2.00]
+[Epoch 1/1][Iter 1010/1034][lr 0.000057][Loss: obj 6.78 || cls 3.24 || reg 0.67 || size 416 || time: 2.03]
+[Epoch 1/1][Iter 1020/1034][lr 0.000059][Loss: obj 10.00 || cls 7.17 || reg 2.68 || size 416 || time: 2.01]
+[Epoch 1/1][Iter 1030/1034][lr 0.000062][Loss: obj 7.22 || cls 3.01 || reg 0.88 || size 416 || time: 2.04]
+eval ...
+im_detect: 1/4952 0.029s
+im_detect: 501/4952 0.028s
+im_detect: 1001/4952 0.032s
+im_detect: 1501/4952 0.032s
+im_detect: 2001/4952 0.016s
+im_detect: 2501/4952 0.031s
+im_detect: 3001/4952 0.031s
+im_detect: 3501/4952 0.031s
+im_detect: 4001/4952 0.031s
+im_detect: 4501/4952 0.016s
+Evaluating detections
+VOC07 metric? Yes
+AP for aeroplane = 0.0069
+AP for bicycle = 0.0002
+AP for bird = 0.0000
+AP for boat = 0.0101
+AP for bottle = 0.0000
+AP for bus = 0.0000
+AP for car = 0.0432
+AP for cat = 0.0227
+AP for chair = 0.0001
+AP for cow = 0.0000
+AP for diningtable = 0.0000
+AP for dog = 0.0107
+AP for horse = 0.0005
+AP for motorbike = 0.0238
+AP for person = 0.1125
+AP for pottedplant = 0.0000
+AP for sheep = 0.0000
+AP for sofa = 0.0000
+AP for train = 0.0025
+AP for tvmonitor = 0.0001
+Mean AP = 0.0117
+Mean AP:  0.011672185317832283
+Saving state, epoch: 1
+Epoch:%d total time: %d  1 485.535028219223
+
+进程已结束,退出代码0

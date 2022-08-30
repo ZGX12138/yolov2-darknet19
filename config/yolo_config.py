@@ -12,7 +12,7 @@ yolo_config = {
     },
     'yolov2': {
         # backbone
-        'backbone': 'r50',
+        'backbone': 'd19',
         # neck
         'neck': 'dilated_encoder',
         # anchor size: P5-640
