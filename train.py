@@ -36,9 +36,9 @@ from evaluator.vocapi_evaluator import VOCAPIEvaluator
 def parse_args():
     parser = argparse.ArgumentParser(description='YOLO Detection')
     # basic
-    parser.add_argument('--cuda', action='store_true', default=False,
+    parser.add_argument('--cuda', action='store_true', default=True,
                         help='use cuda.')
-    parser.add_argument('--batch_size', default=32, type=int,
+    parser.add_argument('--batch_size', default=64, type=int,
                         help='Batch size for training')
     parser.add_argument('--lr', default=1e-3, type=float, 
                         help='initial learning rate')
@@ -56,7 +56,7 @@ def parse_args():
                         help='start epoch to train')
     parser.add_argument('-r', '--resume', default=None, type=str, 
                         help='keep training')
-    parser.add_argument('--num_workers', default=8, type=int, 
+    parser.add_argument('--num_workers', default=4, type=int,
                         help='Number of workers used in dataloading')
     parser.add_argument('--num_gpu', default=1, type=int, 
                         help='Number of GPUs to train')
