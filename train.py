@@ -38,7 +38,7 @@ def parse_args():
     # basic
     parser.add_argument('--cuda', action='store_true', default=True,
                         help='use cuda.')
-    parser.add_argument('--batch_size', default=16, type=int, 
+    parser.add_argument('--batch_size', default=32, type=int,
                         help='Batch size for training')
     parser.add_argument('--lr', default=1e-3, type=float, 
                         help='initial learning rate')
@@ -46,7 +46,7 @@ def parse_args():
                         help='The upper bound of warm-up')
     parser.add_argument('--multi_scale_range', nargs='+', default=[10, 20], type=int,
                         help='lr epoch to decay')
-    parser.add_argument('--max_epoch', type=int, default=1,
+    parser.add_argument('--max_epoch', type=int, default=200,
                         help='The upper bound of warm-up')
     parser.add_argument('--lr_epoch', nargs='+', default=[100, 150], type=int,
                         help='lr epoch to decay')
@@ -89,7 +89,7 @@ def parse_args():
                         help='NMS threshold')
 
     # dataset
-    parser.add_argument('--root', default='.\data',
+    parser.add_argument('--root', default='../input/pascal-voc-2007-and-2012',
                         help='data root')
     parser.add_argument('-d', '--dataset', default='voc',
                         help='coco, widerface, crowdhuman')
@@ -187,7 +187,7 @@ def train():
         model = torch.nn.SyncBatchNorm.convert_sync_batchnorm(model)
 
     model = model.to(device).train()
-    checkpoint = torch.load('./weights/yolov2_36.4_56.6.pth', map_location='cpu')
+    checkpoint = torch.load('../input/yolov2pth/yolov2_36.4_56.6.pth', map_location='cpu')
     del_keys = ["neck.projector.0.convs.0.weight", "cls_pred.weight",
                 "cls_pred.bias", ]
     for k in del_keys:
