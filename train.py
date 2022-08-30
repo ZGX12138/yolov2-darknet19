@@ -36,13 +36,13 @@ from evaluator.vocapi_evaluator import VOCAPIEvaluator
 def parse_args():
     parser = argparse.ArgumentParser(description='YOLO Detection')
     # basic
-    parser.add_argument('--cuda', action='store_true', default=False,
+    parser.add_argument('--cuda', action='store_true', default=True,
                         help='use cuda.')
     parser.add_argument('--batch_size', default=16, type=int, 
                         help='Batch size for training')
     parser.add_argument('--lr', default=1e-3, type=float, 
                         help='initial learning rate')
-    parser.add_argument('--img_size', type=int, default=640,
+    parser.add_argument('--img_size', type=int, default=416,
                         help='The upper bound of warm-up')
     parser.add_argument('--multi_scale_range', nargs='+', default=[10, 20], type=int,
                         help='lr epoch to decay')
@@ -80,7 +80,7 @@ def parse_args():
                         help='clip gradient')
 
     # model
-    parser.add_argument('-m', '--model', default='yolov1',
+    parser.add_argument('-m', '--model', default='yolov2',
                         help='yolov1, yolov2, yolov3, yolov3_spp, yolov3_de, '
                              'yolov4, yolo_tiny, yolo_nano')
     parser.add_argument('--conf_thresh', default=0.001, type=float,
@@ -89,9 +89,9 @@ def parse_args():
                         help='NMS threshold')
 
     # dataset
-    parser.add_argument('--root', default='/mnt/share/ssd2/dataset',
+    parser.add_argument('--root', default='.\data',
                         help='data root')
-    parser.add_argument('-d', '--dataset', default='coco',
+    parser.add_argument('-d', '--dataset', default='voc',
                         help='coco, widerface, crowdhuman')
     
     # Loss

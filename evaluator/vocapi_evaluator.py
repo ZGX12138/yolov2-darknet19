@@ -19,8 +19,8 @@ class VOCAPIEvaluator():
                  img_size, 
                  device, 
                  transform, 
-                 set_type='test', 
-                 year='2007', 
+                 set_type='val',
+                 year='2012',
                  display=False):
         self.data_dir = data_dir
         self.img_size = img_size
@@ -33,14 +33,14 @@ class VOCAPIEvaluator():
 
         # path
         self.devkit_path = os.path.join(data_dir, 'VOC' + year)
-        self.annopath = os.path.join(data_dir, 'VOC2007', 'Annotations', '%s.xml')
-        self.imgpath = os.path.join(data_dir, 'VOC2007', 'JPEGImages', '%s.jpg')
-        self.imgsetpath = os.path.join(data_dir, 'VOC2007', 'ImageSets', 'Main', set_type+'.txt')
+        self.annopath = os.path.join(data_dir, 'VOC2012', 'Annotations', '%s.xml')
+        self.imgpath = os.path.join(data_dir, 'VOC2012', 'JPEGImages', '%s.jpg')
+        self.imgsetpath = os.path.join(data_dir, 'VOC2012', 'ImageSets', 'Main', set_type+'.txt')
         self.output_dir = self.get_output_dir('voc_eval/', self.set_type)
 
         # dataset
         self.dataset = VOCDetection(data_dir=data_dir, 
-                                    image_sets=[('2007', set_type)],
+                                    image_sets=[('2012', set_type)],
                                     transform=transform)
 
     def evaluate(self, net):
