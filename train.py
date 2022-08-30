@@ -62,7 +62,7 @@ def parse_args():
                         help='Number of GPUs to train')
     parser.add_argument('--eval_epoch', type=int,
                             default=10, help='interval between evaluations')
-    parser.add_argument('--tfboard', action='store_true', default=False,
+    parser.add_argument('--tfboard', action='store_true', default=True,
                         help='use tensorboard')
     parser.add_argument('--save_folder', default='weights/', type=str, 
                         help='path to save weight')
@@ -222,8 +222,8 @@ def train():
     if args.tfboard:
         print('use tensorboard')
         from torch.utils.tensorboard import SummaryWriter
-        c_time = time.strftime('%Y-%m-%d %H:%M:%S',time.localtime(time.time()))
-        log_path = os.path.join('log/', args.dataset, c_time)
+        # c_time = time.strftime('%Y-%m-%d%H:%M:%S',time.localtime(time.time()))
+        log_path = os.path.join('log/', args.dataset)
         os.makedirs(log_path, exist_ok=True)
 
         tblogger = SummaryWriter(log_path)
