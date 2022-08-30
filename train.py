@@ -36,7 +36,7 @@ from evaluator.vocapi_evaluator import VOCAPIEvaluator
 def parse_args():
     parser = argparse.ArgumentParser(description='YOLO Detection')
     # basic
-    parser.add_argument('--cuda', action='store_true', default=True,
+    parser.add_argument('--cuda', action='store_true', default=False,
                         help='use cuda.')
     parser.add_argument('--batch_size', default=32, type=int,
                         help='Batch size for training')
