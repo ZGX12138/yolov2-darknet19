@@ -46,7 +46,7 @@ def parse_args():
                         help='The upper bound of warm-up')
     parser.add_argument('--multi_scale_range', nargs='+', default=[10, 20], type=int,
                         help='lr epoch to decay')
-    parser.add_argument('--max_epoch', type=int, default=200,
+    parser.add_argument('--max_epoch', type=int, default=1,
                         help='The upper bound of warm-up')
     parser.add_argument('--lr_epoch', nargs='+', default=[100, 150], type=int,
                         help='lr epoch to decay')
@@ -192,7 +192,7 @@ def train():
                 "cls_pred.bias", ]
     for k in del_keys:
         del checkpoint[k]
-    model.load_state_dict(checkpoint, strict=False)
+    print(model.load_state_dict(checkpoint, strict=False))
 
     # compute FLOPs and Params
     if local_rank == 0:
