@@ -90,7 +90,7 @@ class VOCDetection(data.Dataset):
     def __init__(self, 
                  data_dir=None,
                  img_size=640,
-                 image_sets=[('2007', 'trainval')],
+                 image_sets=[('2007', 'trainval'),('2012', 'trainval')],
                  transform=None, 
                  color_augment=None,
                  target_transform=VOCAnnotationTransform(),
