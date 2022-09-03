@@ -42,13 +42,13 @@ def parse_args():
                         help='Batch size for training')
     parser.add_argument('--lr', default=1e-3, type=float, 
                         help='initial learning rate')
-    parser.add_argument('--img_size', type=int, default=416,
+    parser.add_argument('--img_size', type=int, default=288,
                         help='The upper bound of warm-up')
     parser.add_argument('--multi_scale_range', nargs='+', default=[10, 20], type=int,
                         help='lr epoch to decay')
-    parser.add_argument('--max_epoch', type=int, default=200,
+    parser.add_argument('--max_epoch', type=int, default=100,
                         help='The upper bound of warm-up')
-    parser.add_argument('--lr_epoch', nargs='+', default=[100, 150], type=int,
+    parser.add_argument('--lr_epoch', nargs='+', default=[50, 75], type=int,
                         help='lr epoch to decay')
     parser.add_argument('--wp_epoch', type=int, default=2,
                         help='The upper bound of warm-up')
