@@ -153,7 +153,29 @@ class DarkNet_19(nn.Module):
             Conv_BN_LeakyReLU(1024, 512, 1),
             Conv_BN_LeakyReLU(512, 1024, 3, 1)
         )
-
+        self.DC_block1=nn.Sequential(
+            Conv_BN_LeakyReLU(512, 1024, 3, 1),
+            Conv_BN_LeakyReLU(1024, 256, 1),
+        )
+        self.DC_block2 = nn.Sequential(
+            Conv_BN_LeakyReLU(768, 1024, 3, 1),
+            Conv_BN_LeakyReLU(1024, 512, 1),
+        )
+        self.DC_block3 = nn.Sequential(
+            Conv_BN_LeakyReLU(1280, 1024, 3, 1),
+            Conv_BN_LeakyReLU(1024, 512, 1),
+        )
+        self.DC_block4 = nn.Sequential(
+            Conv_BN_LeakyReLU(1792, 1024, 3, 1),
+            Conv_BN_LeakyReLU(1024, 512, 1),
+        )
+        self.DC_block5 = nn.Sequential(
+            Conv_BN_LeakyReLU(2304, 1024, 3, 1),
+            Conv_BN_LeakyReLU(1024, 512, 1),
+        )
+        self.DC_block6 = nn.Sequential(
+            Conv_BN_LeakyReLU(512, 1024, 3, 1),
+        )
         # self.conv_7 = nn.Conv2d(1024, 1000, 1)
         # self.avgpool = nn.AdaptiveAvgPool2d((1, 1))
 
@@ -163,8 +185,18 @@ class DarkNet_19(nn.Module):
         x = self.conv_3(x)
         x1 = self.conv_4(x)
         x2 = self.conv_5(x1)
-        x3 = self.conv_6(x2)
+        # x3 = self.conv_6(x2)
 
+        DCblock_layer1=x2
+        DCblock_layer2= self.DC_block1(DCblock_layer1)
+        DCblock_layer2_1=torch.cat((DCblock_layer1,DCblock_layer2),1)
+        DCblock_layer3= self.DC_block2(DCblock_layer2_1)
+        DCblock_layer3_1 = torch.cat((DCblock_layer2_1, DCblock_layer3), 1)
+        DCblock_layer4= self.DC_block3(DCblock_layer3_1)
+        DCblock_layer4_1 = torch.cat((DCblock_layer3_1, DCblock_layer4), 1)
+        DCblock_layerout= self.DC_block4(DCblock_layer4_1)
+        x3=torch.cat((DCblock_layer4_1, DCblock_layerout), 1)
+        x3=self.DC_block6(self.DC_block5(x3))
         # x = self.conv_7(x)
         # x = self.avgpool(x)
         # x = x.view(x.size(0), -1)
