@@ -52,9 +52,9 @@ def parse_args():
                         help='lr epoch to decay')
     parser.add_argument('--wp_epoch', type=int, default=2,
                         help='The upper bound of warm-up')
-    parser.add_argument('--start_epoch', type=int, default=120,
+    parser.add_argument('--start_epoch', type=int, default=0,
                         help='start epoch to train')
-    parser.add_argument('-r', '--resume', default="../input/resumepth/yolov2_120_56.19.pth", type=str,
+    parser.add_argument('-r', '--resume', default=None, type=str,
                         help='keep training')
     parser.add_argument('--num_workers', default=4, type=int,
                         help='Number of workers used in dataloading')
