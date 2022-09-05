@@ -61,7 +61,7 @@ def parse_args():
     parser.add_argument('--num_gpu', default=1, type=int, 
                         help='Number of GPUs to train')
     parser.add_argument('--eval_epoch', type=int,
-                            default=2, help='interval between evaluations')
+                            default=5, help='interval between evaluations')
     parser.add_argument('--tfboard', action='store_true', default=True,
                         help='use tensorboard')
     parser.add_argument('--save_folder', default='weights/', type=str, 
