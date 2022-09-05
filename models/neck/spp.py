@@ -34,7 +34,7 @@ class SPPBlock(nn.Module):
     """
         Spatial Pyramid Pooling Block
     """
-    def __init__(self, c1, c2, e=0.5, kernel_sizes=[5, 9, 13], act='lrelu'):
+    def __init__(self, c1, c2, e=0.5, kernel_sizes=[3, 5, 9], act='lrelu'):
         super(SPPBlock, self).__init__()
         self.m = nn.Sequential(
             Conv(c1, c1//2, k=1, act=act),

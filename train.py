@@ -180,7 +180,7 @@ def train():
                       num_classes=num_classes, 
                       trainable=True)
     model = net
-
+    # print(model)
     # SyncBatchNorm
     if args.sybn and args.cuda and args.num_gpu > 1:
         print('use SyncBatchNorm ...')
